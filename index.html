@@ -9,40 +9,32 @@
         body {
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            overflow-x: hidden; /* Hide default horizontal scrollbar */
+        }
+
+        .horizontal-container {
+            display: flex; /* Enable horizontal layout */
+            overflow-x: auto; /* Allow horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Snap sections into place */
+            gap: 20px; /* Add spacing between sections */
+            padding: 20px;
+        }
+
+        .section {
+            min-width: 100vw; /* Each section takes up full viewport width */
+            height: 100vh; /* Full viewport height */
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
             text-align: center;
-        }
-
-        .content {
             background: #ffffff;
-            padding: 20px 40px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 600px;
-            position: relative; /* For logo positioning */
-        }
-
-        .logo {
-            position: absolute;
-            top: -30px; /* Move the logo slightly above the content box */
-            left: 50%;
-            transform: translateX(-50%);
-            background: white;
-            padding: 5px;
-            border-radius: 50%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo img {
-            max-width: 60px; /* Adjust the size of the logo */
-            height: auto;
+            scroll-snap-align: start; /* Ensure sections snap into view */
+            padding: 20px;
         }
 
         .header {
@@ -57,7 +49,6 @@
             margin-bottom: 20px;
         }
 
-        /* Join Button Styles */
         .join-button {
             display: inline-block;
             background-color: #5865F2;
@@ -75,86 +66,40 @@
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
 
-        /* Customer Reviews Section */
-        .reviews {
-            margin-top: 40px;
-            width: 80%;
-            max-width: 800px; /* Adjusted width for better alignment */
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            justify-content: center;
-        }
-
-        .review-header {
-            font-size: 16px; /* Reduced header size */
-            color: #333;
-            margin-bottom: 15px;
-            width: 100%; /* Make header full-width */
-            text-align: center;
-        }
-
-        .review-item {
-            margin: 10px;
-            padding: 8px; /* Reduced padding */
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            background: #fafafa;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            flex: 1 1 calc(33% - 20px); /* 3 items per row with spacing */
-            min-width: 180px; /* Smaller minimum width */
-        }
-
-        .review-item:hover {
-            transform: translateY(-6px); /* Smaller lift effect */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
-        }
-
-        .review-text {
-            font-size: 12px; /* Reduced text size */
-            color: #555;
-            margin-bottom: 6px; /* Reduced spacing */
-        }
-
-        .review-author {
-            font-size: 10px; /* Reduced author size */
-            color: #777;
+        /* Hide scrollbars for better aesthetics */
+        .horizontal-container::-webkit-scrollbar {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <!-- Main Content -->
-    <div class="content">
-        <!-- Logo -->
-        <div class="logo">
-            <img src="https://i.ibb.co/C3F1vnn8/gmail-logo-on-transparent-white-background-free-vector.jpg" alt="Gmail Farm Logo">
+    <!-- Horizontal Scrolling Container -->
+    <div class="horizontal-container">
+        <!-- Section 1 -->
+        <div class="section">
+            <div class="header">Welcome To Gmail Farm</div>
+            <div class="description">
+                سيرفرنا يقدم خدمة شراء الجيميلات بأسعار تنافسية بـ شرط أن تكون مصنوعة بالمعلومات المطلوبة.
+            </div>
+            <a href="https://discord.gg/WrxYBwKF" class="join-button" target="_blank">Join Now</a>
         </div>
 
-        <div class="header">Welcome To Gmail Farm</div>
-        <div class="description">
-            سيرفرنا يقدم خدمة شراء الجيميلات بأسعار تنافسية بـ شرط أن تكون مصنوعة بالمعلومات المطلوبة.
+        <!-- Section 2 -->
+        <div class="section">
+            <div class="header">Our Services</div>
+            <div class="description">
+                نقدم خدمات متعددة مثل شراء حسابات جيميل، دعم فني، وإعداد حسابات وفقًا لاحتياجاتك.
+            </div>
+            <a href="#" class="join-button">Learn More</a>
         </div>
-        <a href="https://discord.gg/WrxYBwKF" class="join-button" target="_blank">Join Now</a>
-    </div>
 
-    <!-- Customer Reviews Section -->
-    <div class="reviews">
-        <div class="review-header">آراء العملاء</div>
-        <div class="review-item">
-            <div class="review-text">خدمة ممتازة! حصلت على الحسابات التي كنت أحتاجها بسرعة وبجودة عالية.</div>
-            <div class="review-author">- عميل سعيد</div>
-        </div>
-        <div class="review-item">
-            <div class="review-text">تعاملت مع الفريق عدة مرات وكل مرة كانت تجربتي إيجابية للغاية.</div>
-            <div class="review-author">- مستخدم راضٍ</div>
-        </div>
-        <div class="review-item">
-            <div class="review-text">أفضل خدمة في السوق، أسعارهم مناسبة وجودتهم لا تُعلى عليها.</div>
-            <div class="review-author">- متابع دائم</div>
+        <!-- Section 3 -->
+        <div class="section">
+            <div class="header">Customer Reviews</div>
+            <div class="description">
+                "خدمة ممتازة! حصلت على الحسابات التي كنت أحتاجها بسرعة وبجودة عالية." - عميل سعيد
+            </div>
+            <a href="#" class="join-button">View All Reviews</a>
         </div>
     </div>
 </body>
