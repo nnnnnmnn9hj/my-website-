@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gmail Farm offers competitive pricing for Gmail accounts with specific requirements. Join our Discord server to learn more!">
-    <meta name="keywords" content="Gmail Farm, buy Gmail accounts, competitive pricing, Discord server">
-    <meta name="author" content="Your Name/Company">
     <title>Gmail Farm</title>
     <style>
         /* General Styles */
@@ -13,23 +10,12 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             height: 100vh;
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
             text-align: center;
-            animation: fadeIn 2s ease-in-out; /* Fade In Effect */
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
         }
 
         .content {
@@ -37,20 +23,6 @@
             padding: 20px 40px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 80%;
-            max-width: 600px;
-            animation: slideIn 1s ease-in-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
         }
 
         .header {
@@ -65,6 +37,7 @@
             margin-bottom: 20px;
         }
 
+        /* Join Button Styles */
         .join-button {
             display: inline-block;
             background-color: #5865F2;
@@ -73,129 +46,23 @@
             padding: 10px 20px;
             border-radius: 5px;
             font-size: 16px;
-            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Add transitions for hover effects */
         }
 
         .join-button:hover {
-            background-color: #4a56e2;
-            transform: scale(1.1);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Parallax Background */
-        .parallax {
-            height: 300px;
-            background-image: url('https://via.placeholder.com/1920x300'); /* Replace with your image URL */
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        /* Carousel Styles */
-        .carousel {
-            position: relative;
-            width: 100%;
-            margin: 20px auto;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .slides {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .slide {
-            min-width: 100%;
-            padding: 20px;
-            text-align: center;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            display: none; /* Hide all slides by default */
-        }
-
-        .slide.active {
-            display: block; /* Show only the active slide */
-        }
-
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 20px;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        .prev {
-            left: 10px;
-        }
-
-        .next {
-            right: 10px;
-        }
-
-        /* Visitor Counter */
-        #visitor-count {
-            margin-top: 20px;
-            font-size: 18px;
-            color: #333;
+            background-color: #4a56e2; /* Change background color on hover */
+            transform: scale(1.1); /* Scale up the button */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
         }
     </style>
 </head>
 <body>
-    <!-- Parallax Background -->
-    <div class="parallax"></div>
-
-    <!-- Main Content -->
     <div class="content">
         <div class="header">Welcome To Gmail Farm</div>
         <div class="description">
             سيرفرنا يقدم خدمة شراء الجيميلات بأسعار تنافسية بـ شرط أن تكون مصنوعة بالمعلومات المطلوبة.
         </div>
-        <a href="https://discord.gg/WrxYBwKF" class="join-button" target="_blank" rel="noopener noreferrer">Join Now</a>
+        <a href="https://discord.gg/WrxYBwKF" class="join-button" target="_blank">Join Now</a>
     </div>
-
-    <!-- Visitor Counter -->
-    <div id="visitor-count">Loading Visitors...</div>
-
-    <!-- Carousel -->
-    <div class="carousel">
-        <div class="slides">
-            <div class="slide active">Slide 1 Content</div>
-            <div class="slide">Slide 2 Content</div>
-            <div class="slide">Slide 3 Content</div>
-        </div>
-        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-        <button class="next" onclick="changeSlide(1)">&#10095;</button>
-    </div>
-
-    <script>
-        // Carousel Script
-        let slideIndex = 0;
-        const slides = document.querySelectorAll('.slide');
-
-        function changeSlide(n) {
-            slides[slideIndex].classList.remove('active');
-            slideIndex = (slideIndex + n + slides.length) % slides.length;
-            slides[slideIndex].classList.add('active');
-        }
-
-        // Visitor Counter Script
-        fetch('https://api.countapi.xyz/hit/gmail-farm/visitors')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('visitor-count').textContent = `Visitors: ${data.value}`;
-            })
-            .catch(error => {
-                document.getElementById('visitor-count').textContent = 'Unable to load visitor count.';
-            });
-    </script>
 </body>
 </html>
