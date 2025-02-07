@@ -90,7 +90,7 @@
         }
 
         .review-header {
-            font-size: 20px;
+            font-size: 18px; /* Reduced header size */
             color: #333;
             margin-bottom: 20px;
             width: 100%; /* Make header full-width */
@@ -99,29 +99,29 @@
 
         .review-item {
             margin: 10px;
-            padding: 15px;
+            padding: 10px; /* Reduced padding */
             border: 1px solid #e0e0e0;
             border-radius: 8px;
             background: #fafafa;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            flex: 1 1 calc(33% - 20px); /* 3 items per row with spacing */
-            min-width: 250px; /* Minimum width for responsiveness */
+            flex: 1 1 calc(25% - 20px); /* 4 items per row with spacing */
+            min-width: 180px; /* Smaller minimum width */
         }
 
         .review-item:hover {
-            transform: translateY(-10px); /* Lift effect */
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+            transform: translateY(-8px); /* Smaller lift effect */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow */
         }
 
         .review-text {
-            font-size: 16px;
+            font-size: 14px; /* Reduced text size */
             color: #555;
-            margin-bottom: 10px;
+            margin-bottom: 8px; /* Reduced spacing */
         }
 
         .review-author {
-            font-size: 14px;
+            font-size: 12px; /* Reduced author size */
             color: #777;
         }
     </style>
@@ -155,6 +155,10 @@
         <div class="review-item">
             <div class="review-text">أفضل خدمة في السوق، أسعارهم مناسبة وجودتهم لا تُعلى عليها.</div>
             <div class="review-author">- متابع دائم</div>
+        </div>
+        <div class="review-item">
+            <div class="review-text">فريق دعم سريع الاستجابة ومتعاون جدًا!</div>
+            <div class="review-author">- زبون جديد</div>
         </div>
     </div>
 </body>
