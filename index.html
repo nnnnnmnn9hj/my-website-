@@ -79,38 +79,50 @@
         .reviews {
             margin-top: 40px;
             width: 80%;
-            max-width: 600px;
+            max-width: 1000px; /* Wider for horizontal layout */
             background: #ffffff;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            justify-content: center;
         }
 
         .review-header {
             font-size: 20px;
             color: #333;
             margin-bottom: 20px;
+            width: 100%; /* Make header full-width */
+            text-align: center;
         }
 
         .review-item {
-            margin-bottom: 15px;
-            padding: 10px;
-            border-bottom: 1px solid #e0e0e0;
+            margin: 10px;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #fafafa;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex: 1 1 calc(33% - 20px); /* 3 items per row with spacing */
+            min-width: 250px; /* Minimum width for responsiveness */
         }
 
-        .review-item:last-child {
-            border-bottom: none;
+        .review-item:hover {
+            transform: translateY(-10px); /* Lift effect */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
         }
 
         .review-text {
             font-size: 16px;
             color: #555;
+            margin-bottom: 10px;
         }
 
         .review-author {
             font-size: 14px;
             color: #777;
-            margin-top: 5px;
         }
     </style>
 </head>
