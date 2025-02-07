@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column; /* Use column layout for better alignment */
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
@@ -19,23 +19,30 @@
             text-align: center;
         }
 
-        .logo {
-            margin-top: 20px; /* Add some space above the logo */
-            margin-bottom: 20px; /* Add space below the logo */
-        }
-
-        .logo img {
-            max-width: 150px; /* Set a maximum width for the logo */
-            height: auto; /* Maintain aspect ratio */
-        }
-
         .content {
             background: #ffffff;
             padding: 20px 40px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 80%; /* Adjust width for better responsiveness */
-            max-width: 600px; /* Limit maximum width */
+            width: 80%;
+            max-width: 600px;
+            position: relative; /* For logo positioning */
+        }
+
+        .logo {
+            position: absolute;
+            top: -30px; /* Move the logo slightly above the content box */
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 5px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo img {
+            max-width: 60px; /* Adjust the size of the logo */
+            height: auto;
         }
 
         .header {
@@ -67,21 +74,76 @@
             transform: scale(1.1);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
+
+        /* Customer Reviews Section */
+        .reviews {
+            margin-top: 40px;
+            width: 80%;
+            max-width: 600px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .review-header {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .review-item {
+            margin-bottom: 15px;
+            padding: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .review-item:last-child {
+            border-bottom: none;
+        }
+
+        .review-text {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .review-author {
+            font-size: 14px;
+            color: #777;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
-    <!-- Logo Section -->
-    <div class="logo">
-        <img src="https://i.ibb.co/C3F1vnn8/gmail-logo-on-transparent-white-background-free-vector.jpg" alt="Gmail Farm Logo">
-    </div>
-
     <!-- Main Content -->
     <div class="content">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="https://i.ibb.co/C3F1vnn8/gmail-logo-on-transparent-white-background-free-vector.jpg" alt="Gmail Farm Logo">
+        </div>
+
         <div class="header">Welcome To Gmail Farm</div>
         <div class="description">
             سيرفرنا يقدم خدمة شراء الجيميلات بأسعار تنافسية بـ شرط أن تكون مصنوعة بالمعلومات المطلوبة.
         </div>
         <a href="https://discord.gg/WrxYBwKF" class="join-button" target="_blank">Join Now</a>
+    </div>
+
+    <!-- Customer Reviews Section -->
+    <div class="reviews">
+        <div class="review-header">آراء العملاء</div>
+        <div class="review-item">
+            <div class="review-text">خدمة ممتازة! حصلت على الحسابات التي كنت أحتاجها بسرعة وبجودة عالية.</div>
+            <div class="review-author">- عميل سعيد</div>
+        </div>
+        <div class="review-item">
+            <div class="review-text">تعاملت مع الفريق عدة مرات وكل مرة كانت تجربتي إيجابية للغاية.</div>
+            <div class="review-author">- مستخدم راضٍ</div>
+        </div>
+        <div class="review-item">
+            <div class="review-text">أفضل خدمة في السوق، أسعارهم مناسبة وجودتهم لا تُعلى عليها.</div>
+            <div class="review-author">- متابع دائم</div>
+        </div>
     </div>
 </body>
 </html>
